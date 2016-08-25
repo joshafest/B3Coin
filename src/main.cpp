@@ -1300,7 +1300,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
     }
     if((pindexBest->nHeight <= 500)&&(pindexBest->nHeight > 50) )
     {
-        nSubsidy = 1 * COIN;
+        nSubsidy = 0.000001 * COIN;
     }
     if((pindexBest->nHeight <= 1500)&&(pindexBest->nHeight > 500) )
     {
