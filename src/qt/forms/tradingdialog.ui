@@ -3909,7 +3909,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Amount in TX:</string>
+            <string>Amount in B3:</string>
            </property>
           </widget>
          </item>

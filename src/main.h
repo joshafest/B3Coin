@@ -24,11 +24,9 @@ class CValidationState;
 static const int64_t DARKSEND_COLLATERAL = (0.01*COIN);
 static const int64_t DARKSEND_POOL_MAX = (9999.99*COIN);
 
-//static const int64_t STATIC_POS_REWARD = 1 * COIN; 
-static const int64_t TARGET_SPACING_FORK = 360;
+
 static const int64_t TARGET_SPACING = 360;
-static const signed int HARD_FORK_BLOCK = 10000;
-static const signed int HARD_FORK_BLOCK2 = 100000;
+
 
 #define INSTANTX_SIGNATURES_REQUIRED           10
 #define INSTANTX_SIGNATURES_TOTAL              15

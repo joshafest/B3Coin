@@ -329,7 +329,7 @@ void BitcoinGUI::createActions()
     showBackupsAction = new QAction(QIcon(":/icons/browse"), tr("Show Auto&Backups"), this);
     showBackupsAction->setStatusTip(tr("S"));
 
-    connect(TradingAction, SIGNAL(triggered()), this, SLOT(gotoTradingPage()));
+    //connect(TradingAction, SIGNAL(triggered()), this, SLOT(gotoTradingPage()));
     connect(blockAction, SIGNAL(triggered()), this, SLOT(gotoBlockBrowser()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
@@ -1219,11 +1219,9 @@ void BitcoinGUI::updateStakingIcon()
         uint64_t nWeight = this->nWeight;
         uint64_t nNetworkWeight = GetPoSKernelPS();
         unsigned nEstimateTime = 0;
-        if(pindexBest->nHeight <= HARD_FORK_BLOCK){
-            nEstimateTime = TARGET_SPACING_FORK * nNetworkWeight / nWeight;
-        } else {
-            nEstimateTime = TARGET_SPACING * nNetworkWeight / nWeight;
-        }
+        
+           nEstimateTime = TARGET_SPACING * nNetworkWeight / nWeight;
+        
 
         QString text;
         if (nEstimateTime < 60)

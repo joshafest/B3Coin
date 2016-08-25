@@ -65,7 +65,7 @@ Value getstakesubsidy(const Array& params, bool fHelp)
         ssData >> tx;
     }
     catch (std::exception &e) {
-        throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "TX decode failed");
+        throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "B3 decode failed");
     }
 
     uint64_t nCoinAge;
@@ -127,11 +127,9 @@ Value getstakinginfo(const Array& params, bool fHelp)
 
     uint64_t nNetworkWeight = GetPoSKernelPS();
     bool staking = nLastCoinStakeSearchInterval && nWeight;
-    if(pindexBest->nHeight <= HARD_FORK_BLOCK){
-        nExpectedTime = staking ? (TARGET_SPACING_FORK * nNetworkWeight / nWeight) : 0;
-    } else {
+    
         nExpectedTime = staking ? (TARGET_SPACING * nNetworkWeight / nWeight) : 0;
-    }
+   
 
     Object obj;
 

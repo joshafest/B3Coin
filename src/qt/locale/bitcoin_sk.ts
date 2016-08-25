@@ -1735,8 +1735,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 TX</source>
-        <translation>123.456 TX {0.00 ?}</translation>
+        <source>0.00 B3</source>
+        <translation>123.456 B3 {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1805,8 +1805,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 TX</source>
-        <translation>123.456 TX</translation>
+        <source>123.456 B3</source>
+        <translation>123.456 B3</translation>
     </message>
     <message>
         <location line="+31"/>
