@@ -1296,7 +1296,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
     int64_t nSubsidy = 5 * COIN;
    if(pindexBest->nHeight <= 500)
     {
-        nSubsidy = 0 * COIN;
+        nSubsidy = 1 * COIN;
     }
     if((pindexBest->nHeight <= 1500)&&(pindexBest->nHeight > 500) )
     {
@@ -1339,12 +1339,14 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     else
         nRewardCoinYear = 0.45 * COIN_YEAR_REWARD;
 
-    int64_t nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
+	int64_t nSubsidy = nCoinAge / 365 / COIN;
+	nSubsidy = nSubsidy * nRewardCoinYear;
+	return nSubsidy + nFees; 
 
     return nSubsidy + nFees;
 }
 
-static int64_t nTargetTimespan = 3600;  
+static int64_t nTargetTimespan = 1 * 24 * 60 * 60; 
 
 // ppcoin: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
