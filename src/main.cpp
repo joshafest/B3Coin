@@ -1294,7 +1294,11 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
     int64_t nSubsidy = 5 * COIN;
-   if(pindexBest->nHeight <= 500)
+   if(pindexBest->nHeight <= 50)
+    {
+        nSubsidy = 0 * COIN;
+    }
+    if((pindexBest->nHeight <= 500)&&(pindexBest->nHeight > 50) )
     {
         nSubsidy = 1 * COIN;
     }
